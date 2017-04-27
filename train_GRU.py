@@ -57,8 +57,8 @@ def main(_):
 			saver = tf.train.Saver(max_to_keep=None)
 
 			#merged_summary = tf.summary.merge_all()
-			merged_summary = tf.merge_all_summaries()
-			summary_writer = tf.train.SummaryWriter(FLAGS.summary_dir+'/train_loss',sess.graph)
+			merged_summary = tf.summary.merge_all()
+			summary_writer = tf.summary.FileWriter(FLAGS.summary_dir+'/train_loss',sess.graph)
 
 			#summary for embedding
 			#it's not available in tf 0.11,(because there is no embedding panel in 0.11's tensorboard) so I delete it =.=
